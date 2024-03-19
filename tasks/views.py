@@ -25,5 +25,5 @@ class TaskViewSet(viewsets.ModelViewSet):
 @csrf_exempt
 def just_send_email(request):
     if request.method == 'POST':
-        send_email_task.delay('Task Added', 'A new task has been added.', ['talha.jaleel255@example.com'])
+        send_email_task.delay('Task Added', 'A new task has been added.', ['recipient_email_address'])
     return Response('OK')
